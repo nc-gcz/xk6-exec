@@ -1,4 +1,4 @@
-module github.com/grafana/xk6-exec
+module github.com/nc-gcz/xk6-exec
 
 go 1.19
 
