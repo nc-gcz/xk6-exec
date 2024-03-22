@@ -55,5 +55,9 @@ func (*EXEC) Command(name string, args []string, option CommandOptions) string {
 	if err != nil {
 		log.Fatal(err.Error() + " on command: " + name + " " + strings.Join(args, " "))
 	}
+
+	log.Print("Output: " + string(out));
+	log.Print("Error: " + err.Error());
+
 	return string(out)
 }
