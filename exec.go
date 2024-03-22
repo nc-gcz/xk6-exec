@@ -48,7 +48,7 @@ func (exec *EXEC) Exports() modules.Exports {
 // Command is a wrapper for Go exec.Command
 func (*EXEC) Command(name string, args []string, option CommandOptions) string {
 	log.Print("Name:" + name)
-	log.Print("Args: " + strings.Join(args, ' '))
+	log.Print("Args: " + strings.Join(args, " "))
 	
 	cmd := exec.Command(name, args...)
 	if option.Dir != "" {
