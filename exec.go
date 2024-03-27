@@ -50,10 +50,14 @@ func (exec *EXEC) Exports() modules.Exports {
 func (*EXEC) Command(name string, args []string, option CommandOptions) string {
 	cmd := exec.Command(name, args...)
 
-	log.Print("V1")
+	log.Print("V2")
+
+	log.Print(option)
+
+	log.Print("Command executed (outside): " + string(name) + " " + strings.Join(args, " "))
 
 	if option.Debug {
-		log.Print("Command executed: " + string(name) + " " + strings.Join(args, " "))
+		log.Print("Command executed (inside): " + string(name) + " " + strings.Join(args, " "))
 	}
 
 	if option.Dir != "" {
