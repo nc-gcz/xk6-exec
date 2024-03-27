@@ -24,7 +24,7 @@ type EXEC struct {
 
 // CommandOptions contains the options that can be passed to command.
 type CommandOptions struct {
-	Dir string,
+	Dir string
 	Debug bool
 }
 
