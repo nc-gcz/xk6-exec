@@ -12,6 +12,6 @@ go clean -cache
 
 echo "Building..."
 
-xk6 build --with github.com/nc-gcz/xk6-exec@0.5.0
+xk6 build --with github.com/nc-gcz/xk6-exec@0.6.0
 
 ./k6 version

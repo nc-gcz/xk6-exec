@@ -50,17 +50,7 @@ func (exec *EXEC) Exports() modules.Exports {
 func (*EXEC) Command(name string, args []string, option CommandOptions) string {
 	cmd := exec.Command(name, args...)
 
-	log.Print("V3")
-
-	log.Print("Option Dir: " + option.Dir)
-	log.Print("Option Debug: " + option.Debug)
-		
-
-	log.Print("Command executed (outside): " + string(name) + " " + strings.Join(args, " "))
-
-	if option.Debug == "true" {
-		log.Print("Command executed (inside): " + string(name) + " " + strings.Join(args, " "))
-	}
+	log.Print("V4")
 
 	if option.Dir != "" {
 		cmd.Dir = option.Dir
@@ -70,8 +60,6 @@ func (*EXEC) Command(name string, args []string, option CommandOptions) string {
 	
 	if err != nil {
 		log.Print(err.Error() + " on command: " + name + " " + strings.Join(args, " "))
-	} else {
-		log.Print("Output: " + string(out));
 	}
 
 	return string(out)
