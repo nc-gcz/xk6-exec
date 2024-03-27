@@ -25,7 +25,7 @@ type EXEC struct {
 // CommandOptions contains the options that can be passed to command.
 type CommandOptions struct {
 	Dir string
-	Debug bool
+	Debug string
 }
 
 // Ensure the interfaces are implemented correctly.
@@ -50,13 +50,15 @@ func (exec *EXEC) Exports() modules.Exports {
 func (*EXEC) Command(name string, args []string, option CommandOptions) string {
 	cmd := exec.Command(name, args...)
 
-	log.Print("V2")
+	log.Print("V3")
 
-	log.Print(option)
+	log.Print("Option Dir: " + option.Dir)
+	log.Print("Option Debug: " + option.Debug)
+		
 
 	log.Print("Command executed (outside): " + string(name) + " " + strings.Join(args, " "))
 
-	if option.Debug {
+	if option.Debug == "true" {
 		log.Print("Command executed (inside): " + string(name) + " " + strings.Join(args, " "))
 	}
 
